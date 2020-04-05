@@ -91,17 +91,7 @@ ul {
 h1{
     color: #000;
 }
-.modal-dialog {
-    // max-width: 1570px;
-    max-width: 81.771vw;
-    height: 100%;
-    display: flex;
-    align-items: center;
-}
-.modal-backdrop.show{
-    background-color: #092b55;
-    opacity: 0.4;
-}
+
 
 /*menu*/
 .line {
@@ -596,7 +586,7 @@ h1{
             width: 35px;
             height: 35px;
             border:1px solid #000;
-            border-radius: 5px;
+            border-radius: 10px
         }
         &:hover{
             background-image: url(../assets/images/btn_fb_hover.png);
@@ -616,7 +606,7 @@ h1{
             width: 35px;
             height: 35px;
             border:1px solid #000;
-            border-radius: 5px;
+            border-radius: 10px
         }
         &:hover{
             background-image: url(../assets/images/btn_download_hover.png);
@@ -637,7 +627,7 @@ h1{
             width: 35px;
             height: 35px;
             border:1px solid #000;
-            border-radius: 5px;
+            border-radius: 10px
         }
         &:hover{
             background-image: url(../assets/images/btn_toTop_hover.png);
@@ -645,7 +635,12 @@ h1{
         &.active{
             border:0.052vw solid #000;
             height: 2.969vw;
-            
+            @media(max-width:1199px){
+                width: 35px;
+                height: 35px;
+                border:1px solid #000;
+                border-radius: 10px
+            }
         }
     }
 }
@@ -683,7 +678,7 @@ h1{
                 max-width: 50%;
             }
             @media(max-width:767px){
-                max-width: 80%;
+                max-width: 100%;
                 margin-top: 0;
                 margin-left: auto;
                 margin-right: auto;
@@ -702,14 +697,17 @@ h1{
                 margin-left: auto;
                 margin-right: auto;
             }
-            @media(max-width:480px){
-                max-width: 100%;
-            }
             img{
                 width: 100%;
             }
         }
         .description{
+            @media(max-width:767px){
+                max-width: 80%;
+                margin: 0 auto;
+            }
+            
+
             li{
                 // padding-left: 25px;
                 // font-size: 27px;
@@ -768,7 +766,7 @@ h1{
                 margin-top: 5%;
             }
             @media(max-width:767px){
-                max-width: 80%;
+                max-width: 100%;
                 margin-left: auto;
                 margin-right: auto;
                 margin-top: 0;
@@ -791,7 +789,7 @@ h1{
                 margin-top: 15px;
             }
             @media(max-width:480px){
-                max-width: 100%;
+                max-width: 70%;
             }
             img{
                 width: 100%;
@@ -809,6 +807,10 @@ h1{
             @media(max-width:1199px){
                 font-size: 18px;
             }
+            @media(max-width:767px){
+                max-width: 80%;
+                margin: 0 auto;
+            }
             &:not(:last-child){
                 // margin-bottom: 25px;
                 margin-bottom: 1.302vw;
@@ -818,6 +820,10 @@ h1{
             }
         }
         .list_ultilities{
+            @media(max-width:767px){
+                max-width: 80%;
+                margin: 0 auto;
+            }
             li{
                 display: flex;
                 align-items: center;
@@ -897,6 +903,8 @@ h1{
                 position: static;
                 flex-direction: column-reverse;
                 margin-top: 0;
+                margin-left: 10px;
+                margin-right: 10px;
             }
            &--left{
                 // flex: 1;
@@ -908,6 +916,9 @@ h1{
                 }
                 @media(max-width:1199px){
                     width: 80%;
+                }
+                @media(max-width:767px){
+                    width: 100%;
                 }
                 
                 .item{
@@ -1121,7 +1132,7 @@ h1{
                 display: none;
             }
             .heading{
-                max-width: 46%;
+                max-width: 65%;
                 margin-left: auto;
                 margin-right: auto;
                 margin-bottom: 25px;
@@ -1162,7 +1173,7 @@ h1{
             margin-top: 4vh;
         }
         @media(max-width:767px){
-            max-width: 80%;
+            max-width: 100%;
             margin-top: 0;
             margin-left: auto;
             margin-right: auto;
@@ -1190,10 +1201,6 @@ h1{
             margin-bottom: 15px;
             margin-top: 15px;
         }
-        @media(max-width:480px){
-            max-width: 90%;
-            margin: 15px auto;
-        }
         img{
             width: 100%;
         }
@@ -1215,6 +1222,11 @@ h1{
         }
     }
     form{
+        @media(max-width:767px){
+            max-width: 80%;
+            margin: 0 auto;
+        }
+       
         label{
             // font-size:40px;
             // margin-bottom: 25px;
@@ -1325,6 +1337,8 @@ h1{
 
 .image_mb{
     border: 5px solid #fff;
+    margin-left: 10px;
+    margin-right: 10px;
     @media(min-width: 768px){
         display: none;
     }
@@ -1332,6 +1346,16 @@ h1{
 
 .modal{
     &#Utilities{
+        .modal-dialog{
+            margin-top: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 71.771vw;
+            @media(max-width:767px){
+                max-width: 90%;
+            }
+        }
         .modal-body{
             max-height: 80vh;
             overflow: hidden;
@@ -1355,7 +1379,13 @@ h1{
                 font-style: italic;
                 font-family: $fontLight;
                 margin-bottom: 0;
-                
+                @media(max-width:1199px){
+                    padding: 12px 15px;
+                    font-size:20px;
+                }
+                @media(max-width:480px){
+                    font-size:14px;
+                }
             }
         }
     }
@@ -1395,6 +1425,7 @@ h1{
                 min-height: 145px;
                 font-size: 20px;
                 padding: 20px;
+                border-radius: 15px;
             }
             @media(max-width:480px){
                 font-size: 18px;
@@ -1424,10 +1455,26 @@ h1{
                 width: 100%;
             }
         }
+        @media(max-width:767px){
+            height: 30px;
+            width: 30px;
+        }
         &:hover{
             transform: rotate(180deg);
             opacity: 1 !important;
 
         }
     }
+    .modal-dialog {
+        // max-width: 1570px;
+        max-width: 81.771vw;
+        height: 100%;
+        margin-top: 25vh;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+.modal-backdrop.show{
+    background-color: #092b55;
+    opacity: 0.4;
 }

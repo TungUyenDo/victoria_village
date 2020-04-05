@@ -70,6 +70,7 @@ $('.closeMenu').click(function(){
 
 $('.selectUltilites figure').click(function(){
     $('#Utilities').modal('show');
-    var value = $(this).html();
-    $('#Utilities .modal-body').html(value);
+    var href = $(this).attr('href');
+    var figure = '<figure><img src="' + href + '"></figure>'
+    $('#Utilities .modal-body').html(figure);
 })
