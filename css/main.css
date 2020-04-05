@@ -1191,22 +1191,23 @@ h1 {
     font-family: "SFUIText-Light";
     margin-bottom: 0; }
 
-.modal#Thanks .modal-dialog {
-  max-width: 28vw; }
+.modal.modal-message .modal-dialog {
+  max-width: 40vw; }
   @media (max-width: 1199px) {
-    .modal#Thanks .modal-dialog {
-      max-width: 500px;
+    .modal.modal-message .modal-dialog {
+      max-width: 620px;
       margin-left: auto;
       margin-right: auto; } }
   @media (max-width: 767px) {
-    .modal#Thanks .modal-dialog {
-      max-width: 85%; } }
+    .modal.modal-message .modal-dialog {
+      max-width: 90%; } }
 
-.modal#Thanks .modal-content {
+.modal.modal-message .modal-content {
   background: transparent;
   border: none; }
 
-.modal#Thanks .modal-body {
+.modal.modal-message .modal-body {
+  padding: 2.5vw;
   min-height: 13vw;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1217,7 +1218,7 @@ h1 {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  font-size: 1.8vw;
+  font-size: 1.5vw;
   background-image: -webkit-gradient(linear, right top, left top, from(#051d42), color-stop(#072249), color-stop(#082750), color-stop(#0a2d57), to(#0b325e));
   background-image: -webkit-linear-gradient(right, #051d42, #072249, #082750, #0a2d57, #0b325e);
   background-image: -o-linear-gradient(right, #051d42, #072249, #082750, #0a2d57, #0b325e);
@@ -1225,14 +1226,19 @@ h1 {
   color: #fff;
   border-radius: 1.5vw; }
   @media (max-width: 1199px) {
-    .modal#Thanks .modal-body {
+    .modal.modal-message .modal-body {
       min-height: 225px;
       font-size: 25px;
-      border-radius: 25px; } }
+      border-radius: 25px;
+      padding: 30px; } }
   @media (max-width: 767px) {
-    .modal#Thanks .modal-body {
+    .modal.modal-message .modal-body {
       min-height: 145px;
-      font-size: 20px; } }
+      font-size: 20px;
+      padding: 20px; } }
+  @media (max-width: 480px) {
+    .modal.modal-message .modal-body {
+      font-size: 18px; } }
 
 .modal .close {
   height: 3.490vw;
