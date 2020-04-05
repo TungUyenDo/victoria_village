@@ -355,6 +355,7 @@ h1 {
       right: 30px; } }
   @media (max-width: 480px) {
     .nav-toggle {
+      width: 25px;
       right: 15px; } }
 
 .menu-nav {
@@ -482,6 +483,9 @@ h1 {
     #fp-nav {
       right: 40px !important;
       top: 60px; } }
+  @media (max-width: 767px) {
+    #fp-nav {
+      display: none !important; } }
   #fp-nav ul li {
     width: auto;
     height: auto;
@@ -525,7 +529,7 @@ h1 {
     width: 2.865vw;
     cursor: pointer;
     display: block;
-    background-size: contain;
+    background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
     background-color: #e4c16b; }
@@ -1017,7 +1021,13 @@ h1 {
     max-width: 28.125vw;
     margin-right: 6.510vw;
     margin-left: auto;
-    text-align: center; }
+    text-align: center;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%); }
     @media (max-width: 1199px) {
       .section_contact .content, .section_01 .content, .section_06 .content {
         max-width: 40%;
@@ -1027,7 +1037,11 @@ h1 {
         max-width: 80%;
         margin-top: 0;
         margin-left: auto;
-        margin-right: auto; } }
+        margin-right: auto;
+        position: static;
+        -webkit-transform: none;
+        -ms-transform: none;
+        transform: none; } }
   .section_contact .heading, .section_01 .heading, .section_06 .heading {
     max-width: 24.740vw;
     margin-bottom: 0.885vw;
@@ -1156,14 +1170,14 @@ h1 {
     .image_mb {
       display: none; } }
 
-.modal .modal-body {
+.modal#Utilities .modal-body {
   max-height: 80vh;
   overflow: hidden;
   padding: 0;
   position: relative; }
-  .modal .modal-body img {
+  .modal#Utilities .modal-body img {
     width: 100%; }
-  .modal .modal-body .name {
+  .modal#Utilities .modal-body .name {
     padding: 1.042vw 1.823vw;
     font-size: 1.823vw;
     position: absolute;
@@ -1176,6 +1190,49 @@ h1 {
     font-style: italic;
     font-family: "SFUIText-Light";
     margin-bottom: 0; }
+
+.modal#Thanks .modal-dialog {
+  max-width: 28vw; }
+  @media (max-width: 1199px) {
+    .modal#Thanks .modal-dialog {
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto; } }
+  @media (max-width: 767px) {
+    .modal#Thanks .modal-dialog {
+      max-width: 85%; } }
+
+.modal#Thanks .modal-content {
+  background: transparent;
+  border: none; }
+
+.modal#Thanks .modal-body {
+  min-height: 13vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 1.8vw;
+  background-image: -webkit-gradient(linear, right top, left top, from(#051d42), color-stop(#072249), color-stop(#082750), color-stop(#0a2d57), to(#0b325e));
+  background-image: -webkit-linear-gradient(right, #051d42, #072249, #082750, #0a2d57, #0b325e);
+  background-image: -o-linear-gradient(right, #051d42, #072249, #082750, #0a2d57, #0b325e);
+  background-image: linear-gradient(to left, #051d42, #072249, #082750, #0a2d57, #0b325e);
+  color: #fff;
+  border-radius: 1.5vw; }
+  @media (max-width: 1199px) {
+    .modal#Thanks .modal-body {
+      min-height: 225px;
+      font-size: 25px;
+      border-radius: 25px; } }
+  @media (max-width: 767px) {
+    .modal#Thanks .modal-body {
+      min-height: 145px;
+      font-size: 20px; } }
 
 .modal .close {
   height: 3.490vw;

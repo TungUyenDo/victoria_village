@@ -69,7 +69,7 @@ $('.closeMenu').click(function(){
 })
 
 $('.selectUltilites figure').click(function(){
-    $('#exampleModal').modal('show');
+    $('#Utilities').modal('show');
     var value = $(this).html();
-    $('.modal .modal-body').html(value);
+    $('#Utilities .modal-body').html(value);
 })

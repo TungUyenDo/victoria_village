@@ -79,7 +79,7 @@
 					<figure class="line_center">
 						<img src="./assets/images/line-heading.png" alt="Căn hộ ngay trung tâm hành chánh quận 2">
 					</figure>
-					<form data-id="form01">
+					<form data-id="form01" class="">
 						<label>Đăng kí tư vấn miễn phí</label>
 						<div class="form-group">
 							<input type="text" placeholder="Họ và tên (*)" name="name" class="form-control">
@@ -95,7 +95,7 @@
 						</div>
 					</form>
 					<div class="submit">
-						<button class="btn_submit" disabled>nhận báo giá dự án</button>
+						<button class="btn_submit" data-toggle="modal" data-target="#Thanks">nhận báo giá dự án</button>
 					</div>
 				</div>
 			</section>
@@ -269,7 +269,7 @@
 		</div>
 
 		<!-- Modal -->
-		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal fade" id="Utilities" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 			<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -280,16 +280,18 @@
 			</div>
 		</div>
 
-		<!-- Modal -->
-		<!-- <div class="modal fade" id="#exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
+
+		<div class="modal fade" id="Thanks" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 			<div class="modal-dialog" role="document">
 			<div class="modal-content">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><img src="./assets/images/modal_close.png" alt="">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<img src="./assets/images/modal_close.png" alt="">
 				</button>
-				<div class="modal-body"></div>
+				<div class="modal-body">Cảm ơn bạn đã đăng ký</div>
 			</div>
-			</div> -->
+			</div>
 		</div>
+
 
 		<!-- Site footer -->
 		<footer class="site-footer footer-content-light footer-mobile-content-light">
