@@ -79,16 +79,16 @@
 					<figure class="line_center">
 						<img src="./assest/images/line-heading.png" alt="Căn hộ ngay trung tâm hành chánh quận 2">
 					</figure>
-					<form>
+					<form data-id="form01">
 						<label>Đăng kí tư vấn miễn phí</label>
 						<div class="form-group">
-							<input type="text" placeholder="Họ và tên (*)" class="form-control">
+							<input type="text" placeholder="Họ và tên (*)" name="name" class="form-control">
 						</div>
 						<div class="form-group">
-							<input type="text" placeholder="Số điện thoại (*)" class="form-control">
+							<input type="number" placeholder="Số điện thoại (*)" name="phone" class="form-control">
 						</div>
 						<div class="form-group">
-							<input type="text" placeholder="Email (*)" class="form-control">
+							<input type="text" placeholder="Email (*)" name="email" class="form-control">
 						</div>
 						<div class="form-group">
 							<input type="text" placeholder="Địa chỉ" class="form-control">
@@ -245,16 +245,16 @@
 					<figure class="line_center">
 						<img src="./assest/images/line-heading.png" alt="Căn hộ ngay trung tâm hành chánh quận 2">
 					</figure>
-					<form>
+					<form data-id="form02">
 						<label>Đăng kí tư vấn miễn phí</label>
 						<div class="form-group">
-							<input type="text" placeholder="Họ và tên (*)" class="form-control">
+							<input type="text" placeholder="Họ và tên (*)" name="name" class="form-control">
 						</div>
 						<div class="form-group">
-							<input type="text" placeholder="Số điện thoại (*)" class="form-control">
+							<input type="number" placeholder="Số điện thoại (*)" name="phone" class="form-control">
 						</div>
 						<div class="form-group">
-							<input type="text" placeholder="Email (*)" class="form-control">
+							<input type="text" placeholder="Email (*)" name="email" class="form-control">
 						</div>
 						<div class="form-group">
 							<input type="text" placeholder="Địa chỉ" class="form-control">
@@ -306,6 +306,67 @@
 	<script src="./assest/libs/fullpage/jquery.fullpage.min.js"></script>
 
 	<script src="./js/main.js"></script>
+
+	<script>
+		$(document).ready(function() {
+
+			validateForm('form01');
+			validateForm('form02');
+
+			function validateForm(id){
+
+				var name = $('form[data-id="'+ id +'"]').find('input[name="name"]');
+				var phone = $('form[data-id="'+ id +'"]').find('input[name="phone"]');
+				var email = $('form[data-id="'+ id +'"]').find('input[name="email"]');
+
+				isName = false;
+				isPhone = false;
+				isEmail = false;
+
+				name.keyup(function(){
+					valueName = $(this).val();
+					console.log(valueName)
+					if($(this).val()){
+						isName = true;
+						if(isEmail && isName && isPhone){
+							$('form[data-id="'+ id +'"]').closest('.content').find('.btn_submit').removeAttr('disabled')
+						}
+					}
+				})
+				phone.keyup(function(){
+					valuePhone = $(this).val();
+					valuePhone = valuePhone.replace(/[^0-9]/g,'');
+					if (valuePhone.length < 10){
+						return false;
+					}else{
+						isPhone = true;
+						if(isEmail && isName && isPhone){
+							$('form[data-id="'+ id +'"]').closest('.content').find('.btn_submit').removeAttr('disabled')
+						}
+					}
+				})
+				email.keyup(function(){
+					valueEmail = $(this).val();
+					var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+					if(!regex.test(valueEmail)) {
+						return false;
+					}else{
+						isEmail = true;
+						if(isEmail && isName && isPhone){
+							$('form[data-id="'+ id +'"]').closest('.content').find('.btn_submit').removeAttr('disabled')
+						}
+					}
+				})
+
+				
+			}
+
+			
+			
+
+
+		});
+	</script>
 
 
 </body>
