@@ -671,8 +671,12 @@ h1{
             max-width: 42.188vw;
             // margin-right: 125px;
             // max-width: 810px;
-            margin-top: 25vh;
+            // margin-top: 25vh;
             margin-left: auto;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             @media(max-width:1199px){
                 margin-right: 80px;
                 max-width: 50%;
@@ -1303,34 +1307,40 @@ h1{
         }
     }
     .btn_submit{
-        // font-size: 23px;
-        // width: 340px;
-        // height: 70px;
         // border: 1px solid #0a2e58;
         // box-shadow: -6px 7px 7px rgba(0, 0, 0, 0.52);
         // border-radius: 10px;
-        font-size: 1.198vw;
-        width: 17.708vw;
-        height: 3.646vw;
-        border: 0.052vw solid #0a2e58;
-        box-shadow: -0.313vw 0.365vw 0.365vw rgba(0, 0, 0, 0.52);
-        border-radius: 0.521vw;
+        // width: 342px;
+        // height: 82px;
+        width: 17.813vw;
+        height: 4.271vw;
+        border:none;
         color: #0a2e58;
         text-transform: uppercase;
         font-family: $fontBold;
         text-align: center;
-        background-image: linear-gradient(to top, #f2d37c, #e9c670, #dfb964, #d6ad59, #cca04e);
+        font-size: 0;
+        background-size: cover;
+        background-color: transparent;;
+        // background-image: linear-gradient(to top, #f2d37c, #e9c670, #dfb964, #d6ad59, #cca04e);
+        background-image: url('../assets/images/btn_register_form.png');
+        &:hover{
+            background-image: url('../assets/images/btn_register_form_hover.png');
+        }
         @media(max-width:1199px){
-            font-size: 15px;
-            width:200px;
-            height: 45px;
-            border: 1px solid #0a2e58;
-            box-shadow: -6px 7px 7px rgba(0, 0, 0, 0.52);
-            border-radius: 5px;
+            width: 270px;
+            height: 64px;
+            // border: 1px solid #0a2e58;
+            // box-shadow: -6px 7px 7px rgba(0, 0, 0, 0.52);
+            // border-radius: 5px;
+            
+        }
+        @media(max-width:480px){
+            width: 235px;
+            height: 55px;
         }
         &:disabled{
-            background-image: none;
-            background-color: #b5bbc1;
+            cursor: not-allowed;
         }
     }
 }
@@ -1339,6 +1349,9 @@ h1{
     border: 5px solid #fff;
     margin-left: 10px;
     margin-right: 10px;
+    img{
+        width: 100%;
+    }
     @media(min-width: 768px){
         display: none;
     }
