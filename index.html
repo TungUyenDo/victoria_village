@@ -79,7 +79,12 @@
 					<figure class="line_center">
 						<img src="./assets/images/line-heading.png" alt="Căn hộ ngay trung tâm hành chánh quận 2">
 					</figure>
-					<form data-id="form01" class="">
+					<form method="POST" action="http://themaris.bnb-land.com/contact-post" accept-charset="UTF-8" data-id="form01" class="block1__form">
+						<input name="_token" type="hidden" value="tcNWRMlI6tgNSlrr6guInS3qrQZI7BRi3KHCfXbr">
+                        <input type="hidden" class="modal-form__utm_source" name="utm_source" value="" />
+                        <input type="hidden" class="modal-form__utm_medium" name="utm_medium" value="" />
+                        <input type="hidden" class="modal-form__utm_campaign" name="utm_campaign" value="" />
+                        <input type="hidden"  class="modal-form__utm_content" name="utm_content" value="" />
 						<label>Đăng kí tư vấn miễn phí</label>
 						<div class="form-group">
 							<input type="text" placeholder="Họ và tên (*)" name="name" class="form-control">
@@ -91,12 +96,13 @@
 							<input type="text" placeholder="Email (*)" name="email" class="form-control">
 						</div>
 						<div class="form-group">
-							<input type="text" placeholder="Địa chỉ" class="form-control">
+							<input type="text" name="note" placeholder="Địa chỉ" class="form-control">
+						</div>
+						<div class="submit">
+							<button type="submit" class="btn_submit" disabled>nhận báo giá dự án</button>
 						</div>
 					</form>
-					<div class="submit">
-						<button class="btn_submit" data-toggle="modal" data-target="#Thanks">nhận báo giá dự án</button>
-					</div>
+					
 				</div>
 			</section>
 
@@ -248,7 +254,12 @@
 					<figure class="line_center">
 						<img src="./assets/images/line-heading.png" alt="Căn hộ ngay trung tâm hành chánh quận 2">
 					</figure>
-					<form data-id="form02">
+					<form method="POST" action="http://themaris.bnb-land.com/contact-post" accept-charset="UTF-8" data-id="form02">
+						<input name="_token" type="hidden" value="tcNWRMlI6tgNSlrr6guInS3qrQZI7BRi3KHCfXbr">
+                        <input type="hidden" class="modal-form__utm_source" name="utm_source" value="" />
+                        <input type="hidden" class="modal-form__utm_medium" name="utm_medium" value="" />
+                        <input type="hidden" class="modal-form__utm_campaign" name="utm_campaign" value="" />
+                        <input type="hidden"  class="modal-form__utm_content" name="utm_content" value="" />
 						<label>Đăng kí tư vấn miễn phí</label>
 						<div class="form-group">
 							<input type="text" placeholder="Họ và tên (*)" name="name" class="form-control">
@@ -260,12 +271,12 @@
 							<input type="text" placeholder="Email (*)" name="email" class="form-control">
 						</div>
 						<div class="form-group">
-							<input type="text" placeholder="Địa chỉ" class="form-control">
+							<input type="text" name="note" placeholder="Địa chỉ" class="form-control">
+						</div>
+						<div class="submit">
+							<button class="btn_submit" disabled>nhận báo giá dự án</button>
 						</div>
 					</form>
-					<div class="submit">
-						<button class="btn_submit" disabled>nhận báo giá dự án</button>
-					</div>
 				</div>
 			</section>
 
@@ -353,6 +364,18 @@
 				var phone = $('form[data-id="'+ id +'"]').find('input[name="phone"]');
 				var email = $('form[data-id="'+ id +'"]').find('input[name="email"]');
 
+				var note = $('form[data-id="'+ id +'"]').find('input[name="note"]');
+				var form = new FormData();
+				form.append('_token','tcNWRMlI6tgNSlrr6guInS3qrQZI7BRi3KHCfXbr');
+				form.append('name',name.val());
+				form.append('phone',phone.val());
+				form.append('email',email.val());
+				form.append('note',note.val());
+				form.append('utm_source',$('form[data-id="'+ id +'"]').find(".modal-form__utm_source").val());
+				form.append('utm_medium',$('form[data-id="'+ id +'"]').find(".modal-form__utm_medium").val());
+				form.append('utm_campaign',$('form[data-id="'+ id +'"]').find(".modal-form__utm_campaign").val());
+				form.append('utm_content',$('form[data-id="'+ id +'"]').find(".modal-form__utm_content").val());
+
 				isName = false;
 				isPhone = false;
 				isEmail = false;
@@ -392,13 +415,37 @@
 					}
 				})
 
-				
+
+				$('form[data-id="'+ id +'"]').on("submit" , function(e){
+					e.preventDefault();
+					console.log(form);
+					$.ajax({
+						url: 'http://themaris.bnb-land.com/api/checkValidatePhone',
+						data: form,
+						processData: false,
+						contentType: false,
+						type: 'POST',
+						beforeSend:function(){
+							$('form[data-id="'+ id +'"]').closest('.content').find('.btn_submit').prop('disabled', true);
+						},  
+						success: function(data){
+							if(data == 2){
+								$('#modalSubmitFail').modal('show');
+							}else{
+								$('#Thanks').modal('show');
+								name.val('');
+								phone.val('');
+								email.val('');
+								note.val('');
+							}
+						},
+						error: function(data){
+							$('#modalSubmitValidate').modal('show');
+						}
+					});
+				});
+			
 			}
-
-			
-			
-
-
 		});
 	</script>
 
