@@ -1162,7 +1162,7 @@ h1 {
     font-size: 0;
     background-size: cover;
     background-color: transparent;
-    background-image: url("../assets/images/btn_register_form.png"); }
+    background-image: url("../assets/images/btn_register_form_hover.png"); }
     .section_contact .btn_submit:hover, .section_01 .btn_submit:hover, .section_06 .btn_submit:hover {
       background-image: url("../assets/images/btn_register_form_hover.png"); }
     @media (max-width: 1199px) {
@@ -1263,7 +1263,12 @@ h1 {
   background-image: -o-linear-gradient(right, #051d42, #072249, #082750, #0a2d57, #0b325e);
   background-image: linear-gradient(to left, #051d42, #072249, #082750, #0a2d57, #0b325e);
   color: #fff;
-  border-radius: 1.5vw; }
+  border-radius: 1.5vw;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column; }
   @media (max-width: 1199px) {
     .modal.modal-message .modal-body {
       min-height: 225px;
@@ -1320,3 +1325,29 @@ h1 {
 .modal-backdrop.show {
   background-color: #092b55;
   opacity: 0.4; }
+
+.btn_downloadInfo {
+  -webkit-box-shadow: -6px 7px 7px rgba(0, 0, 0, 0.52);
+  box-shadow: -6px 7px 7px rgba(0, 0, 0, 0.52);
+  border-radius: 7px;
+  padding: 13px 22px;
+  font-size: 18px;
+  border: none;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  background-size: cover;
+  background-color: transparent;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#f2d37c), color-stop(#e9c670), color-stop(#dfb964), color-stop(#d6ad59), to(#cca04e));
+  background-image: -webkit-linear-gradient(bottom, #f2d37c, #e9c670, #dfb964, #d6ad59, #cca04e);
+  background-image: -o-linear-gradient(bottom, #f2d37c, #e9c670, #dfb964, #d6ad59, #cca04e);
+  background-image: linear-gradient(to top, #f2d37c, #e9c670, #dfb964, #d6ad59, #cca04e);
+  margin-top: 20px; }
+  .btn_downloadInfo:hover {
+    text-decoration: underline; }
+  @media (max-width: 480px) {
+    .btn_downloadInfo {
+      padding: 8px 19px;
+      font-size: 14px; } }
+  .btn_downloadInfo:disabled {
+    cursor: not-allowed; }

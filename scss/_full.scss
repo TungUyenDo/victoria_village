@@ -1323,7 +1323,7 @@ h1{
         background-size: cover;
         background-color: transparent;;
         // background-image: linear-gradient(to top, #f2d37c, #e9c670, #dfb964, #d6ad59, #cca04e);
-        background-image: url('../assets/images/btn_register_form.png');
+        background-image: url('../assets/images/btn_register_form_hover.png');
         &:hover{
             background-image: url('../assets/images/btn_register_form_hover.png');
         }
@@ -1344,6 +1344,10 @@ h1{
         }
     }
 }
+
+
+
+
 
 .image_mb{
     border: 5px solid #fff;
@@ -1417,6 +1421,7 @@ h1{
         .modal-content{
             background: transparent;
             border: none;
+            
         }
         .modal-body{
             padding: 2.5vw;
@@ -1428,6 +1433,9 @@ h1{
             background-image: linear-gradient(to left, #051d42, #072249, #082750, #0a2d57, #0b325e);
             color: #fff;
             border-radius: 1.5vw;
+
+            display: flex;
+            flex-direction: column;
             @media(max-width: 1199px){
                 min-height: 225px;
                 font-size: 25px;
@@ -1490,4 +1498,31 @@ h1{
 .modal-backdrop.show{
     background-color: #092b55;
     opacity: 0.4;
+}
+.btn_downloadInfo{
+    box-shadow: -6px 7px 7px rgba(0, 0, 0, 0.52);
+    border-radius: 7px;
+    padding: 13px 22px;
+    font-size: 18px;
+    border:none;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    background-size: cover;
+    background-color: transparent;;
+    background-image: linear-gradient(to top, #f2d37c, #e9c670, #dfb964, #d6ad59, #cca04e);
+    margin-top: 20px;
+    &:hover{
+        text-decoration: underline;
+    }
+    @media(max-width:1199px){
+        
+    }
+    @media(max-width:480px){
+        padding: 8px 19px;
+        font-size: 14px;
+    }
+    &:disabled{
+        cursor: not-allowed;
+    }
 }
