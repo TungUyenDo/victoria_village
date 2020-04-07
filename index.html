@@ -13,6 +13,7 @@
 
 	<link rel="stylesheet" href="./assets/libs/bootstrap/bootstrap.min.css">
 	<link rel="stylesheet" href="./assets/libs/fullpage/jquery.fullpage.min.css">
+	<link rel="stylesheet" href="./assets/libs/lightbox/ekko-lightbox.css">
 	<link rel="stylesheet" href="./css/main.css">
 
 
@@ -70,9 +71,17 @@
 		<div class="fullpage" data-navigation="true">
 
 			<section class="section section_01 section_contact" data-anchor="section01" data-tooltip="Trang chủ">
+				
+				<div class="slider_bg">
+					<div class="slider slider_01 show" style="background-image: url(./assets/images/section01_bg.jpg);"></div>
+					<div class="slider slider_02" style="background-image: url(./assets/images/section1_slider.jpg);"></div>
+				</div>
+
 				<div class="content">
-					<figure class="image_mb">
-						<img src="./assets/images/mb_section_01.jpg" alt="Căn hộ ngay trung tâm hành chánh quận 2">
+					<figure class="image_mb slider_image_mb">
+						<img class="image_dumm" src="./assets/images/mb_section_01.jpg" alt="Căn hộ ngay trung tâm hành chánh quận 2">
+						<img class="image_mb_01 slider_mb show" src="./assets/images/mb_section_01.jpg" alt="Căn hộ ngay trung tâm hành chánh quận 2">
+						<img class="image_mb_02  slider_mb" src="./assets/images/mb_section1_slider.png" alt="Căn hộ ngay trung tâm hành chánh quận 2">
 					</figure>
 
 					<h2 class="heading"><img src="./assets/images/heading01.png" alt="Căn hộ ngay trung tâm hành chánh quận 2"></h2>
@@ -187,32 +196,32 @@
 				<div class="content">
 					<div class="content--left selectUltilites">
 						<div class="item other">
-							<figure href="./assets/images/section04_full_01.jpg">
+							<a class="figure" data-fancybox="gallery" rel="gallery" href="./assets/images/section04_full_01.jpg">
 								<img class="image" src="./assets/images/section04_img01.jpg" alt="Phòng Gym">
 								<h3 class="name">Phòng Gym</h3>
-							</figure>
-							<figure href="./assets/images/section04_full_02.jpg">
+							</a>
+							<a class="figure" data-fancybox="gallery" rel="gallery" href="./assets/images/section04_full_02.jpg">
 								<img class="image" src="./assets/images/section04_img02.jpg" alt="Khu vui chơi trẻ em">
 								<h3 class="name pl">Khu vui chơi trẻ em</h3>
-							</figure>
+							</a>
 						</div>  
 						<div class="item">
-							<figure href="./assets/images/section04_full_03.jpg">
+							<a class="figure" data-fancybox="gallery" rel="gallery" href="./assets/images/section04_full_03.jpg">
 								<img class="image" src="./assets/images/section04_img03.png" alt="Phối cảnh khuôn viên hồ bơi">
 								<h3 class="name">Phối cảnh khuôn viên hồ bơi</h3>
-							</figure>
+							</a>
 						</div>  
 						<div class="item">
-							<figure href="./assets/images/section04_full_04.jpg">
+							<a class="figure" data-fancybox="gallery" rel="gallery" href="./assets/images/section04_full_04.jpg">
 								<img class="image" src="./assets/images/section04_img04.jpg" alt="Căn hộ thương mại-ShopHouse">
 								<h3 class="name pl">Căn hộ thương mại-ShopHouse</h3>
-							</figure>
+							</a>
 						</div>  
 						<div class="item">
-							<figure href="./assets/images/section04_full_05.jpg">
+							<a class="figure" data-fancybox="gallery" rel="gallery" href="./assets/images/section04_full_05.jpg">
 								<img class="image" src="./assets/images/section04_img05.jpg" alt="Công viên nội khu">
 								<h3 class="name">Công viên nội khu</h3>
-							</figure>
+							</a>
 						</div>  
 					</div>
 					<div class="content--right">
@@ -249,11 +258,24 @@
 			</section>
 
 			<section class="section section_06 section_contact" data-anchor="section06" data-tooltip="Liên hệ">
+				<div class="slider_bg">
+					<div class="slider slider_01 show" style="background-image: url(./assets/images/section01_bg.jpg);"></div>
+					<div class="slider slider_02" style="background-image: url(./assets/images/section1_slider.jpg);"></div>
+				</div>
 				<div class="content">
+					
+
 					<h2 class="heading"><img src="./assets/images/heading01.png" alt="Căn hộ ngay trung tâm hành chánh quận 2"></h2>
 					<figure class="line_center">
 						<img src="./assets/images/line-heading.png" alt="Căn hộ ngay trung tâm hành chánh quận 2">
 					</figure>
+
+					<figure class="image_mb slider_image_mb">
+						<img class="image_dumm" src="./assets/images/mb_section_01.jpg" alt="Căn hộ ngay trung tâm hành chánh quận 2">
+						<img class="image_mb_01 slider_mb show" src="./assets/images/mb_section_01.jpg" alt="Căn hộ ngay trung tâm hành chánh quận 2">
+						<img class="image_mb_02  slider_mb" src="./assets/images/mb_section1_slider.png" alt="Căn hộ ngay trung tâm hành chánh quận 2">
+					</figure>
+
 					<form method="POST" action="http://themaris.bnb-land.com/contact-post" accept-charset="UTF-8" data-id="form02">
 						<input name="_token" type="hidden" value="tcNWRMlI6tgNSlrr6guInS3qrQZI7BRi3KHCfXbr">
                         <input type="hidden" class="modal-form__utm_source" name="utm_source" value="" />
@@ -349,6 +371,7 @@
 	<script src="./assets/libs/jquery/jquery.min.js"></script>
 	<script src="./assets/libs/bootstrap/bootstrap.js"></script>
 	<script src="./assets/libs/fullpage/jquery.fullpage.min.js"></script>
+	<script src="./assets/libs/lightbox/ekko-lightbox.min.js"></script>
 
 	<script src="./js/main.js"></script>
 

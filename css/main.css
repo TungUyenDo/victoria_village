@@ -607,7 +607,7 @@ h1 {
       background-position: center center; } }
   @media (max-width: 767px) {
     .section_01 {
-      padding-top: 100px; } }
+      padding-top: 100px !important; } }
   .section_02 {
     background-image: url(../assets/images/section02_bg.jpg);
     background-size: cover;
@@ -855,13 +855,13 @@ h1 {
         .section_04 .content--left .item {
           width: 100% !important;
           margin: 0 !important; } }
-      .section_04 .content--left .item figure {
+      .section_04 .content--left .item .figure {
         position: relative;
         cursor: pointer; }
         @media (max-width: 525px) {
-          .section_04 .content--left .item figure {
+          .section_04 .content--left .item .figure {
             margin: 5px 0; } }
-        .section_04 .content--left .item figure img {
+        .section_04 .content--left .item .figure img {
           width: 100%; }
       .section_04 .content--left .item.other {
         display: -webkit-box;
@@ -1025,19 +1025,68 @@ h1 {
       @media (max-width: 480px) {
         .section_05 .mobile .heading {
           max-width: 75%; } }
+  @media (max-width: 767px) {
+    .section_06 {
+      padding: 50px 0 !important; }
+      .section_06 .image_mb {
+        margin-bottom: 20px; } }
 
 .section_contact, .section_01, .section_06 {
-  background-image: url(../assets/images/section01_bg.jpg);
-  background-size: cover;
-  background-position: center center; }
-  @media (max-width: 1199px) {
-    .section_contact, .section_01, .section_06 {
-      background-position-x: 20%; } }
+  padding: 0; }
+  .section_contact .slider_bg, .section_01 .slider_bg, .section_06 .slider_bg {
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    position: absolute; }
+    @media (max-width: 767px) {
+      .section_contact .slider_bg, .section_01 .slider_bg, .section_06 .slider_bg {
+        display: none; } }
+  .section_contact .slider, .section_01 .slider, .section_06 .slider {
+    width: 100%;
+    opacity: 0;
+    -webkit-transition: all 1.2s;
+    -o-transition: all 1.2s;
+    transition: all 1.2s;
+    height: 100%;
+    z-index: 1;
+    position: absolute;
+    background-size: cover;
+    background-position: center center; }
+    @media (max-width: 1199px) {
+      .section_contact .slider_01, .section_01 .slider_01, .section_06 .slider_01 {
+        background-position-x: 20%; }
+      .section_contact .slider_02, .section_01 .slider_02, .section_06 .slider_02 {
+        background-position-x: 100%; } }
+    .section_contact .slider.show, .section_01 .slider.show, .section_06 .slider.show {
+      z-index: 2;
+      opacity: 1; }
+  .section_contact .slider_image_mb, .section_01 .slider_image_mb, .section_06 .slider_image_mb {
+    position: relative; }
+  .section_contact .image_dumm, .section_01 .image_dumm, .section_06 .image_dumm {
+    position: relative; }
+  .section_contact .slider_mb, .section_01 .slider_mb, .section_06 .slider_mb {
+    background-size: cover;
+    background-position: center center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    -webkit-transition: all 1.2s;
+    -o-transition: all 1.2s;
+    transition: all 1.2s; }
+    .section_contact .slider_mb.image_mb_02, .section_01 .slider_mb.image_mb_02, .section_06 .slider_mb.image_mb_02 {
+      background-position-y: top; }
+    .section_contact .slider_mb.show, .section_01 .slider_mb.show, .section_06 .slider_mb.show {
+      z-index: 2;
+      opacity: 1; }
   .section_contact .content, .section_01 .content, .section_06 .content {
     max-width: 28.125vw;
     margin-right: 6.510vw;
     margin-left: auto;
     text-align: center;
+    z-index: 2;
     position: absolute;
     right: 0;
     top: 50%;
@@ -1351,3 +1400,20 @@ h1 {
       font-size: 14px; } }
   .btn_downloadInfo:disabled {
     cursor: not-allowed; }
+
+.fancybox-container .fancybox-slide--image {
+  overflow: hidden;
+  padding: 80px 0; }
+  .fancybox-container .fancybox-slide--image .fancybox-content {
+    max-width: 71.771vw;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%) !important;
+    -ms-transform: translate(-50%, -50%) !important;
+    transform: translate(-50%, -50%) !important; }
+
+.fancybox-container .fancybox-is-open {
+  background: #092b55; }
+
+.fancybox-container .fancybox-bg {
+  opacity: 0.4; }
