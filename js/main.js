@@ -70,50 +70,47 @@ $(document).ready(function(){
         $('.navigationToggle').show();
     })
 
-    // $('.selectUltilites figure').click(function(){
-    //     $('#Utilities').modal('show');
-    //     var href = $(this).attr('href');
-    //     var figure = '<figure><img src="' + href + '"></figure>'
-    //     $('#Utilities .modal-body').html(figure);
-    // })
 
-    /*slider bg section 1*/
-    sliderBg('section_01');
-    sliderBg('section_06');
-    function sliderBg(numberSection){
-        var slider = $("" + '.'+ numberSection +" .slider_bg .slider");
-        var i = 0;
-        function iterate() {
-            if ( i >= slider.length) {
-                i = 0;
-            }
-            
-            $("" + '.'+ numberSection +" .slider").removeClass("show");
-            $(slider[i]).addClass("show");
-            
-            i++;
-        }
-        setInterval( iterate,4000 );
+    sliderFunction('section_01')
+    sliderFunction('section_06')
+    function sliderFunction(numberSection ){
+        $("" + '.'+ numberSection +" .slider_bg").not('.slick-initialized').slick({
+            dots: false,
+            arrows: true,
+            infinite: false,
+            infinite:true,
+            speed: 300,
+            fade:true,
+            cssEase:'ease',
+            speed:1000,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            prevArrow: '<span class="slick-prev slick-arrow"><img src="./assets/images/arrow-right.png"></i></span>',
+			nextArrow: '<span class="slick-next slick-arrow"><img src="./assets/images/arrow-right.png"></i></span>',
+        });
     }
 
-
-    /*mobile*/
-    sliderBgMb('section_01');
-    sliderBgMb('section_06');
-    function sliderBgMb(numberSection){
-        var slider = $("" + '.'+ numberSection +" .slider_image_mb .slider_mb");
-        var i = 0;
-        function iterate() {
-            if ( i >= slider.length) {
-                i = 0;
-            }
-            
-            $("" + '.'+ numberSection +" .slider_mb").removeClass("show");
-            $(slider[i]).addClass("show");
-            
-            i++;
-        }
-        setInterval( iterate,4000 );
+    sliderMbFunction('section_01')
+    sliderMbFunction('section_06')
+    function sliderMbFunction(numberSection ){
+        $("" + '.'+ numberSection +" .slider_image_mb").not('.slick-initialized').slick({
+            dots: false,
+            arrows: true,
+            infinite: false,
+            infinite:true,
+            speed: 300,
+            fade:true,
+            cssEase:'ease',
+            speed:1000,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            prevArrow: '<span class="slick-prev slick-arrow"><img src="./assets/images/arrow-right.png"></i></span>',
+			nextArrow: '<span class="slick-next slick-arrow"><img src="./assets/images/arrow-right.png"></i></span>',
+        });
     }
+    
+
     
 })

@@ -860,7 +860,8 @@ h1 {
         cursor: pointer; }
         @media (max-width: 525px) {
           .section_04 .content--left .item .figure {
-            margin: 5px 0; } }
+            margin: 5px 0;
+            width: 100%; } }
         .section_04 .content--left .item .figure img {
           width: 100%; }
       .section_04 .content--left .item.other {
@@ -1033,6 +1034,33 @@ h1 {
 
 .section_contact, .section_01, .section_06 {
   padding: 0; }
+  .section_contact .slick-slider .slick-track, .section_01 .slick-slider .slick-track, .section_06 .slick-slider .slick-track, .section_contact .slick-slider .slick-list, .section_01 .slick-slider .slick-list, .section_06 .slick-slider .slick-list {
+    height: 100%; }
+  .section_contact .slick-arrow, .section_01 .slick-arrow, .section_06 .slick-arrow {
+    position: absolute;
+    z-index: 1;
+    max-width: 2.865vw;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    cursor: pointer;
+    padding: 10px; }
+    @media (max-width: 1199px) {
+      .section_contact .slick-arrow, .section_01 .slick-arrow, .section_06 .slick-arrow {
+        max-width: 40px; } }
+    @media (max-width: 767px) {
+      .section_contact .slick-arrow, .section_01 .slick-arrow, .section_06 .slick-arrow {
+        max-width: 30px;
+        background: rgba(255, 255, 255, 0.39);
+        padding: 8px; } }
+  .section_contact .slick-prev, .section_01 .slick-prev, .section_06 .slick-prev {
+    left: 2.083vw;
+    -webkit-transform: translateY(-50%) rotate(-180deg);
+    -ms-transform: translateY(-50%) rotate(-180deg);
+    transform: translateY(-50%) rotate(-180deg); }
+  .section_contact .slick-next, .section_01 .slick-next, .section_06 .slick-next {
+    right: 2.083vw; }
   .section_contact .slider_bg, .section_01 .slider_bg, .section_06 .slider_bg {
     width: 100%;
     height: 100%;
@@ -1043,13 +1071,11 @@ h1 {
         display: none; } }
   .section_contact .slider, .section_01 .slider, .section_06 .slider {
     width: 100%;
-    opacity: 0;
     -webkit-transition: all 1.2s;
     -o-transition: all 1.2s;
     transition: all 1.2s;
     height: 100%;
     z-index: 1;
-    position: absolute;
     background-size: cover;
     background-position: center center; }
     @media (max-width: 1199px) {
