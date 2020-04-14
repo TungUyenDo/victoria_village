@@ -53,16 +53,19 @@
 						<a href="#section02">Giới thiệu</a>
 					</li>
 					<li data-menuanchor="section03">
-						<a href="#section03">Vị trí</a>
+						<a href="#section03">Video</a>
 					</li>
 					<li data-menuanchor="section04">
-						<a href="#section04">Tiện ích nội khu</a>
+						<a href="#section04">Vị trí</a>
 					</li>
 					<li data-menuanchor="section05">
-						<a href="#section05">Mặt bằng tổng thể</a>
+						<a href="#section05">Tiện ích nội khu</a>
 					</li>
 					<li data-menuanchor="section06">
-						<a href="#section06">Liên hệ</a>
+						<a href="#section06">Mặt bằng tổng thể</a>
+					</li>
+					<li data-menuanchor="section07">
+						<a href="#section07">Liên hệ</a>
 					</li>
 				</ul>
 			</div>
@@ -138,7 +141,23 @@
 				</div>
 			</section>
 
-			<section class="section section_03" data-anchor="section03" data-tooltip="Vị trí">
+			<section class="section section_02_video" data-anchor="section03" data-tooltip="Video">
+				<div class="marks"></div>
+				<div class="content videoSlider">	
+					<div class="item" style="z-index:1000;position:absolute;rgba(0, 0, 0,1);height:100%;width:100%">
+						<iframe frameborder="0" allowfullscreen="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" title="YouTube video player" width="600" height="400" src="https://www.youtube.com/embed/bxq8aRiLJtA?autoplay=1&amp;controls=0&amp;showinfo=0&amp;loop=1&amp;rel=0&amp;playlist=bxq8aRiLJtA&amp;mute=1&amp;enablejsapi=1&amp;origin=https%3A%2F%2Falphastarclub.com&amp;widgetid=1"></iframe>
+					</div>
+					<div class="item" style="z-index:1000;position:absolute;rgba(0, 0, 0,1);height:100%;width:100%">
+						<iframe frameborder="0" allowfullscreen="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" title="YouTube video player" width="600" height="400" src="https://www.youtube.com/embed/bxq8aRiLJtA?autoplay=1&amp;controls=0&amp;showinfo=0&amp;loop=1&amp;rel=0&amp;playlist=bxq8aRiLJtA&amp;mute=1&amp;enablejsapi=1&amp;origin=https%3A%2F%2Falphastarclub.com&amp;widgetid=1"></iframe>
+					</div>
+					<div class="item" style="z-index:1000;position:absolute;rgba(0, 0, 0,1);height:100%;width:100%">
+						<iframe frameborder="0" allowfullscreen="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" title="YouTube video player" width="600" height="400" src="https://www.youtube.com/embed/bxq8aRiLJtA?autoplay=1&amp;controls=0&amp;showinfo=0&amp;loop=1&amp;rel=0&amp;playlist=bxq8aRiLJtA&amp;mute=1&amp;enablejsapi=1&amp;origin=https%3A%2F%2Falphastarclub.com&amp;widgetid=1"></iframe>
+					</div>
+					
+				</div>
+			</section>
+
+			<section class="section section_03" data-anchor="section04" data-tooltip="Vị trí">
 				<div class="content">
 					<figure class="image_mb">
 						<img src="./assets/images/mb_section_03.jpg" alt="Tâm điểm kết nối">
@@ -192,7 +211,7 @@
 				</div>
 			</section>
 
-			<section class="section section_04" data-anchor="section04" data-tooltip="Tiện ích nội khu">
+			<section class="section section_04" data-anchor="section05" data-tooltip="Tiện ích nội khu">
 				<div class="content">
 					<div class="content--left selectUltilites">
 						<div class="item other">
@@ -246,7 +265,7 @@
 				</div>
 			</section>
 
-			<section class="section section_05" data-anchor="section05" data-tooltip="Mặt bằng tổng thể">
+			<section class="section section_05" data-anchor="section06" data-tooltip="Mặt bằng tổng thể">
 				<div class="mobile">
 					<h2 class="heading">
 						<img src="./assets/images/mb_heading04.png" alt="Mặt bằng tổng thể">
@@ -257,7 +276,7 @@
 				</div>
 			</section>
 
-			<section class="section section_06 section_contact" data-anchor="section06" data-tooltip="Liên hệ">
+			<section class="section section_06 section_contact" data-anchor="section07" data-tooltip="Liên hệ">
 				<div class="slider_bg">
 					<div class="slider" style="background-image: url(./assets/images/section01_bg.jpg);"></div>
 					<div class="slider" style="background-image: url(./assets/images/section1_slider.jpg);"></div>
@@ -366,16 +385,17 @@
 		</footer>
 
 	</div>
-
 	<script src="./assets/libs/jquery/jquery.min.js"></script>
 	<script src="./assets/libs/bootstrap/bootstrap.js"></script>
 	<script src="./assets/libs/fullpage/jquery.fullpage.min.js"></script>
 	<script src="./assets/libs/lightbox/ekko-lightbox.min.js"></script>
 	<script src="./assets/libs/slick/slick.min.js"></script>
+	
 
 	<script src="./js/main.js"></script>
 
 	<script>
+		
 		$(document).ready(function() {
 
 			validateForm('form01');

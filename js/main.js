@@ -77,7 +77,6 @@ $(document).ready(function(){
         $("" + '.'+ numberSection +" .slider_bg").not('.slick-initialized').slick({
             dots: false,
             arrows: true,
-            infinite: false,
             infinite:true,
             speed: 300,
             fade:true,
@@ -85,11 +84,15 @@ $(document).ready(function(){
             speed:1000,
             slidesToShow: 1,
             slidesToScroll: 1,
-            autoplay: true,
+            // autoplay: true,
             prevArrow: '<span class="slick-prev slick-arrow"><img src="./assets/images/arrow-right.png"></i></span>',
 			nextArrow: '<span class="slick-next slick-arrow"><img src="./assets/images/arrow-right.png"></i></span>',
         });
+
+       
     }
+
+    
 
     sliderMbFunction('section_01')
     sliderMbFunction('section_06')
@@ -105,12 +108,36 @@ $(document).ready(function(){
             speed:1000,
             slidesToShow: 1,
             slidesToScroll: 1,
-            autoplay: true,
+            // autoplay: true,
             prevArrow: '<span class="slick-prev slick-arrow"><img src="./assets/images/arrow-right.png"></i></span>',
 			nextArrow: '<span class="slick-next slick-arrow"><img src="./assets/images/arrow-right.png"></i></span>',
         });
     }
-    
+
+    $(".videoSlider").not('.slick-initialized').slick({
+        dots: true,
+        arrows: false,
+        infinite:true,
+        speed: 300,
+        fade:true,
+        cssEase:'ease',
+        speed:1000,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        // prevArrow: '<span class="slick-prev slick-arrow"><img src="./assets/images/arrow-right.png"></i></span>',
+        // nextArrow: '<span class="slick-next slick-arrow"><img src="./assets/images/arrow-right.png"></i></span>',
+    });
+
+    // $(".section_01 .slider_bg").on('afterChange', function(event, slick, currentSlide, nextSlide){
+    //     if(currentSlide === 2){
+    //         $(".section_01 .slider_bg").slick('slickPause');
+    //         console.log('pause')
+    //     }else{
+    //         console.log('play')
+    //     }
+    // });
+
+
 
     
 })

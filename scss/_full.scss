@@ -656,6 +656,7 @@ h1{
         background-position: center center;
     }
     &_01{
+        
         @extend .section_contact;
         @media (max-width:767px){
            padding-top: 100px !important;
@@ -749,6 +750,93 @@ h1{
                     } 
                 }
             }
+        }
+    }
+    &_02_video{
+        padding: 0;
+        @media(max-width:767px){
+            height: 500px !important;
+        }
+        .marks{
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            z-index: 2;
+        }
+        .slick-dots{
+            z-index: 3;
+            position: absolute;
+            bottom: 3vw;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            button{
+                background-color: transparent;
+                border: 1px solid #fff;
+                border-radius: 50%;
+                width: 16px;
+                height: 16px;
+                font-size: 0;
+                margin: 0 5px;
+                position: relative;
+                &::before{
+                    position: absolute;
+                    content: '';
+                    width: 8px;
+                    height: 8px;
+                    border-radius: 50%;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%,-50%);
+                }
+
+            }
+            .slick-active{
+                button:before{
+                    background-color: #fff;
+                }
+            }
+        }
+        .content{
+            height: 100%;
+        }
+        iframe {
+            display: block;
+            position: absolute;
+            z-index: 1;
+            top: 50%;
+            transform: translate(0, -50%);
+            left: 0;
+            width: 100%;
+            height: calc(100% + 200px);
+        }
+        .slick-slider .slick-track, .slick-slider .slick-list{
+            height: 100%;
+        }
+        .slick-arrow{
+            position: absolute;
+            z-index: 1;
+            max-width: 2.865vw;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            padding: 10px;
+            @media(max-width:1199px){
+                max-width: 40px;
+            }
+            @media(max-width:767px){
+                max-width: 30px;
+                background: rgba(255, 255, 255, 0.39);
+                padding: 8px;
+            }
+        }
+        .slick-prev{
+            left: 2.083vw;
+            transform: translateY(-50%) rotate(-180deg);
+        }
+        .slick-next{
+            right: 2.083vw;
         }
     }
     &_03{
