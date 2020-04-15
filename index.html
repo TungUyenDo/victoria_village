@@ -142,19 +142,21 @@
 			</section>
 
 			<section class="section section_02_video" data-anchor="section03" data-tooltip="Video">
-				<div class="marks"></div>
-				<div class="content videoSlider">	
-					<div class="item" style="z-index:1000;position:absolute;rgba(0, 0, 0,1);height:100%;width:100%">
-						<iframe frameborder="0" allowfullscreen="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" title="YouTube video player" width="600" height="400" src="https://www.youtube.com/embed/bxq8aRiLJtA?autoplay=1&amp;controls=0&amp;showinfo=0&amp;loop=1&amp;rel=0&amp;playlist=bxq8aRiLJtA&amp;mute=1&amp;enablejsapi=1&amp;origin=https%3A%2F%2Falphastarclub.com&amp;widgetid=1"></iframe>
+				
+				<div class="videoSlider">
+					<div class="item">
+						<div class="mark"></div>
+						<iframe data-autoplay class="yt-player" src="https://www.youtube.com/embed/fEvm1guHlU8?autoplay=1&amp;enablejsapi=1&amp;controls=0&amp;mute=1&amp;loop=0&amp;playsinline=1&amp;color=white&amp;rel=0&amp;cc_load_policy=1&amp;playlist=fEvm1guHlU8" frameborder="0" allowfullscreen></iframe>
+						
 					</div>
-					<div class="item" style="z-index:1000;position:absolute;rgba(0, 0, 0,1);height:100%;width:100%">
-						<iframe frameborder="0" allowfullscreen="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" title="YouTube video player" width="600" height="400" src="https://www.youtube.com/embed/bxq8aRiLJtA?autoplay=1&amp;controls=0&amp;showinfo=0&amp;loop=1&amp;rel=0&amp;playlist=bxq8aRiLJtA&amp;mute=1&amp;enablejsapi=1&amp;origin=https%3A%2F%2Falphastarclub.com&amp;widgetid=1"></iframe>
-					</div>
-					<div class="item" style="z-index:1000;position:absolute;rgba(0, 0, 0,1);height:100%;width:100%">
-						<iframe frameborder="0" allowfullscreen="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" title="YouTube video player" width="600" height="400" src="https://www.youtube.com/embed/bxq8aRiLJtA?autoplay=1&amp;controls=0&amp;showinfo=0&amp;loop=1&amp;rel=0&amp;playlist=bxq8aRiLJtA&amp;mute=1&amp;enablejsapi=1&amp;origin=https%3A%2F%2Falphastarclub.com&amp;widgetid=1"></iframe>
+					<div class="item">
+						<div class="mark"></div>
+						<iframe data-autoplay class="yt-player" src="https://www.youtube.com/embed/waM3C5zsuIM?autoplay=1&amp;enablejsapi=1&amp;controls=0&amp;mute=1&amp;loop=0&amp;playsinline=1&amp;color=white&amp;rel=0&amp;cc_load_policy=1&amp;playlist=fEvm1guHlU8" frameborder="0" allowfullscreen></iframe>
+					
 					</div>
 					
 				</div>
+				
 			</section>
 
 			<section class="section section_03" data-anchor="section04" data-tooltip="Vị trí">
@@ -395,8 +397,142 @@
 	<script src="./js/main.js"></script>
 
 	<script>
+		// // 2. This code loads the IFrame Player API code asynchronously.
+		// var tag = document.createElement('script');
+  
+		// tag.src = "https://www.youtube.com/iframe_api";
+		// var firstScriptTag = document.getElementsByTagName('script')[0];
+		// firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+  
+		// // 3. This function creates an <iframe> (and YouTube player)
+		// //    after the API code downloads.
+		// var player;
+
+		// function onYouTubeIframeAPIReady() {
+		// 	player = new YT.Player('video_01', {
+		// 		height: '390',
+		// 		width: '640',
+		// 		videoId: 'fEvm1guHlU8',
+		// 		events: {
+		// 		'onReady': onPlayerReady
+		// 		}
+		// 	});
+		// }
+		// function onYouTubeIframeAPIReady() {
+		// 	player = new YT.Player('video_02', {
+		// 		height: '390',
+		// 		width: '640',
+		// 		videoId: 'fk-_QqmU584',
+		// 		events: {
+		// 		'onReady': onPlayerReady
+		// 		}
+		// 	});
+		// }
+  
+		// function onPlayerReady(event) {
+			
+		// 	// bind events
+		// 	$("#play-button").on("click", function() {
+		// 		alert(1)
+		// 		player.playVideo();
+		// 	});
+			
+		// 	$("#pause-button").on("click", function() {
+		// 		alert(2)
+		// 		player.stopVideo();
+		// 	});
+		
+		// }
+		var tag = document.createElement('script');
+        tag.id = 'iframe-demo';
+        tag.src = 'https://www.youtube.com/iframe_api';
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        var player;
+        function onYouTubeIframeAPIReady() {
+            var elems1 = document.getElementsByClassName('yt-player');
+            for(var i = 0; i < elems1.length; i++) {
+                
+                player = new YT.Player(elems1[i], {
+                    events: {
+                        // 'onReady': onPlayerReady,
+                        // 'onStateChange': onPlayerStateChange
+                    }
+                });
+            }
+        }
+        // function onPlayerReady(event) {
+        //     player.playVideo();
+        // }
+		
+		$('.videoSlider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+            $('.yt-player').each(function(){
+				player.stopVideo();
+            });
+		});
+
+		$('.videoSlider').slick({
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			dots: true,
+			arrows: true,
+			autoplay:false,
+			prevArrow: '<span class="slick-prev slick-arrow"><img src="./assets/images/arrow-right.png"></i></span>',
+			nextArrow: '<span class="slick-next slick-arrow"><img src="./assets/images/arrow-right.png"></i></span>',
+		});
+
+        
+       
+		
+
+
+	</script>
+	<script>
 		
 		$(document).ready(function() {
+			// // Inject YouTube API script
+			// var tag = document.createElement('script');
+			// tag.src = "https://www.youtube.com/player_api";
+			// var firstScriptTag = document.getElementsByTagName('script')[0];
+			// firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+			// // https://developers.google.com/youtube/iframe_api_reference
+
+			// // global variable for the player
+			// var player;
+
+			// // this function gets called when API is ready to use
+			// function onYouTubePlayerAPIReady() {
+			// // create the global player from the specific iframe (#video)
+			// player = new YT.Player('video', {
+			// 	events: {
+			// 	// call this function when player is ready to use
+			// 	'onReady': onPlayerReady
+			// 	}
+			// });
+			// }
+
+			// function onPlayerReady(event) {
+			
+			// 	// bind events
+			// 	$("#play-button").on("click", function() {
+			// 		alert(1)
+			// 		player.playVideo();
+			// 	});
+				
+			// 	$("#pause-button").on("click", function() {
+			// 		alert(2)
+			// 		player.pauseVideo();
+			// 	});
+			
+			// }
+
+			
+
+
+
+
 
 			validateForm('form01');
 			validateForm('form02');

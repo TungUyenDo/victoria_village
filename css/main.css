@@ -688,9 +688,6 @@ h1 {
             top: 5px; } }
   .section_02_video {
     padding: 0; }
-    @media (max-width: 767px) {
-      .section_02_video {
-        height: 500px !important; } }
     .section_02_video .marks {
       position: absolute;
       height: 100%;
@@ -736,17 +733,12 @@ h1 {
       height: 100%; }
     .section_02_video iframe {
       display: block;
-      position: absolute;
       z-index: 1;
-      top: 50%;
-      -webkit-transform: translate(0, -50%);
-      -ms-transform: translate(0, -50%);
-      transform: translate(0, -50%);
       left: 0;
       width: 100%;
       height: calc(100% + 200px); }
     .section_02_video .slick-slider .slick-track, .section_02_video .slick-slider .slick-list {
-      height: 100%; }
+      height: 100% !important; }
     .section_02_video .slick-arrow {
       position: absolute;
       z-index: 1;
@@ -766,12 +758,12 @@ h1 {
           background: rgba(255, 255, 255, 0.39);
           padding: 8px; } }
     .section_02_video .slick-prev {
-      left: 2.083vw;
+      left: 6.083vw;
       -webkit-transform: translateY(-50%) rotate(-180deg);
       -ms-transform: translateY(-50%) rotate(-180deg);
       transform: translateY(-50%) rotate(-180deg); }
     .section_02_video .slick-next {
-      right: 2.083vw; }
+      right: 6.083vw; }
   .section_03 {
     background-image: url(../assets/images/section03_bg.jpg);
     background-size: cover;
@@ -1529,3 +1521,29 @@ h1 {
 
 .fancybox-container .fancybox-bg {
   opacity: 0.4; }
+
+.videoSlider {
+  height: 100%; }
+  @media (max-width: 767px) {
+    .videoSlider {
+      height: auto; } }
+  .videoSlider .item {
+    position: relative; }
+    @media (max-width: 767px) {
+      .videoSlider .item {
+        height: 300px; } }
+  .videoSlider .yt-player {
+    position: absolute;
+    top: 0;
+    z-index: 0; }
+    @media (max-width: 767px) {
+      .videoSlider .yt-player {
+        height: 300px; } }
+  .videoSlider .mark {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    background: transparent; }

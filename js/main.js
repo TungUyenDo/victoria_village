@@ -12,6 +12,7 @@ $(document).ready(function(){
             menu: "#navigation",
             lockAnchors: !1,
             navigation: true,
+            slidesNavigation: true,
             navigationPosition: 'right',
             scrollingSpeed: 500,
             autoScrolling: !0,
@@ -39,6 +40,9 @@ $(document).ready(function(){
             afterResize: function () {
                 var pluginContainer = $(this);
                 $.fn.fullpage.reBuild();
+
+                
+                
             },
             //events
             onLeave: function(origin, destination, direction, index){},
@@ -48,6 +52,7 @@ $(document).ready(function(){
                 }else{
                     $('.btn_toTop').removeClass('active')
                 }
+
             },
             afterRender: function(){},
             afterReBuild: function(){},
@@ -114,29 +119,7 @@ $(document).ready(function(){
         });
     }
 
-    $(".videoSlider").not('.slick-initialized').slick({
-        dots: true,
-        arrows: false,
-        infinite:true,
-        speed: 300,
-        fade:true,
-        cssEase:'ease',
-        speed:1000,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        // prevArrow: '<span class="slick-prev slick-arrow"><img src="./assets/images/arrow-right.png"></i></span>',
-        // nextArrow: '<span class="slick-next slick-arrow"><img src="./assets/images/arrow-right.png"></i></span>',
-    });
-
-    // $(".section_01 .slider_bg").on('afterChange', function(event, slick, currentSlide, nextSlide){
-    //     if(currentSlide === 2){
-    //         $(".section_01 .slider_bg").slick('slickPause');
-    //         console.log('pause')
-    //     }else{
-    //         console.log('play')
-    //     }
-    // });
-
+    
 
 
     
