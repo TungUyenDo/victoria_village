@@ -159,11 +159,30 @@
 				
 			</section>
 
-			<section class="section section_03" data-anchor="section04" data-tooltip="Vị trí">
+			<section class="section section_03" id="section03__map" data-anchor="section04" data-tooltip="Vị trí">
+				
+				<div class="map">
+					<div class="zoomable">
+						<img class="w-100" src="./assets/images/zoomImgas.png" data-src="./assets/images/zoomImgas.png" alt="">
+					</div>
+				
+					<div class="zoomInOut">
+						<div class="plus" id="section03__zoomIn">
+							+
+						</div>
+						<div class="minus" id="section03__zoomOut">
+							-
+						</div>
+					</div>
+				</div>
+
+				
+
 				<div class="content">
-					<figure class="image_mb">
+
+					<!-- <figure class="image_mb">
 						<img src="./assets/images/mb_section_03.jpg" alt="Tâm điểm kết nối">
-					</figure>
+					</figure> -->
 					<h2 class="heading"><img src="./assets/images/heading03.png" alt="Tâm điểm kết nối"></h2>
 					<div class="description">
 						Victoria Village tọa lạc tại mặt tiền đường Đồng Văn Cống, liền ngay trục huyết mạch Mai Chí Thọ, thừa hưởng trọn vẹn giá trị của khu Đông TP.HCM cộng hưởng ưu thế kết nối với quần thể tiện ích lân cận, Victoria Village sẽ sớm là khu dân cư văn minh, sầm uất và có giá trị gia tăng bền vững.
@@ -210,6 +229,7 @@
 							</div>
 						</li>
 					</ul>
+
 				</div>
 			</section>
 
@@ -387,62 +407,74 @@
 		</footer>
 
 	</div>
+
+	<script src="https://timmywil.com/panzoom/demo/panzoom.js"></script>
+
+	<script>
+		var zoomCount = 0;
+		var eleMap = document.querySelector('.zoomable');
+		var eleZoomIn = document.querySelector('.plus');
+		var eleZoomOut = document.querySelector('.minus');
+		const panzoom = Panzoom( eleMap , { contain: 'outside' } );
+
+		panzoom.pan(0, 0)
+
+		eleZoomIn.addEventListener('click', function(e){
+		    if(zoomCount >= 3){ return false }
+		    zoomCount += 0.5;
+		    panzoom.zoomIn(e);
+		});
+		eleZoomOut.addEventListener('click', function(e){
+		    if(zoomCount <= 0){
+		        panzoom.reset(e);
+		        return false;
+		    }
+		    zoomCount -= 0.5;
+		    panzoom.zoomOut(e);
+		});
+
+
+
+
+	</script>
+
+
+	<!-- <script>
+		var zoomCount = 0;
+		var zoomMax = 3;
+		var eleMap = document.querySelector('#section03__map');
+		var eleZoomIn = document.querySelector('.plus');
+		var eleZoomOut = document.querySelector('.minus');
+		const panzoom = Panzoom( eleMap , { contain: 'outside' } );
+		eleZoomIn.addEventListener('click', function(){
+			if(zoomCount >= 3){ return false }
+			zoomCount += 1;
+			panzoom.zoomIn();
+		});
+		eleZoomOut.addEventListener('click', function(){
+			if(zoomCount <= 0){
+				panzoom.reset(e);
+				return false;
+			}
+			zoomCount -= 1;
+			panzoom.zoomOut();
+		});
+	</script> -->
+
+
 	<script src="./assets/libs/jquery/jquery.min.js"></script>
 	<script src="./assets/libs/bootstrap/bootstrap.js"></script>
 	<script src="./assets/libs/fullpage/jquery.fullpage.min.js"></script>
 	<script src="./assets/libs/lightbox/ekko-lightbox.min.js"></script>
 	<script src="./assets/libs/slick/slick.min.js"></script>
+	<script src="https://anvaka.github.io/panzoom/dist/panzoom.js"></script>
 	
 
 	<script src="./js/main.js"></script>
 
-	<script>
-		// // 2. This code loads the IFrame Player API code asynchronously.
-		// var tag = document.createElement('script');
-  
-		// tag.src = "https://www.youtube.com/iframe_api";
-		// var firstScriptTag = document.getElementsByTagName('script')[0];
-		// firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-  
-		// // 3. This function creates an <iframe> (and YouTube player)
-		// //    after the API code downloads.
-		// var player;
 
-		// function onYouTubeIframeAPIReady() {
-		// 	player = new YT.Player('video_01', {
-		// 		height: '390',
-		// 		width: '640',
-		// 		videoId: 'fEvm1guHlU8',
-		// 		events: {
-		// 		'onReady': onPlayerReady
-		// 		}
-		// 	});
-		// }
-		// function onYouTubeIframeAPIReady() {
-		// 	player = new YT.Player('video_02', {
-		// 		height: '390',
-		// 		width: '640',
-		// 		videoId: 'fk-_QqmU584',
-		// 		events: {
-		// 		'onReady': onPlayerReady
-		// 		}
-		// 	});
-		// }
-  
-		// function onPlayerReady(event) {
-			
-		// 	// bind events
-		// 	$("#play-button").on("click", function() {
-		// 		alert(1)
-		// 		player.playVideo();
-		// 	});
-			
-		// 	$("#pause-button").on("click", function() {
-		// 		alert(2)
-		// 		player.stopVideo();
-		// 	});
+	<script>
 		
-		// }
 		var tag = document.createElement('script');
         tag.id = 'iframe-demo';
         tag.src = 'https://www.youtube.com/iframe_api';
@@ -491,49 +523,7 @@
 	<script>
 		
 		$(document).ready(function() {
-			// // Inject YouTube API script
-			// var tag = document.createElement('script');
-			// tag.src = "https://www.youtube.com/player_api";
-			// var firstScriptTag = document.getElementsByTagName('script')[0];
-			// firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-			// // https://developers.google.com/youtube/iframe_api_reference
-
-			// // global variable for the player
-			// var player;
-
-			// // this function gets called when API is ready to use
-			// function onYouTubePlayerAPIReady() {
-			// // create the global player from the specific iframe (#video)
-			// player = new YT.Player('video', {
-			// 	events: {
-			// 	// call this function when player is ready to use
-			// 	'onReady': onPlayerReady
-			// 	}
-			// });
-			// }
-
-			// function onPlayerReady(event) {
 			
-			// 	// bind events
-			// 	$("#play-button").on("click", function() {
-			// 		alert(1)
-			// 		player.playVideo();
-			// 	});
-				
-			// 	$("#pause-button").on("click", function() {
-			// 		alert(2)
-			// 		player.pauseVideo();
-			// 	});
-			
-			// }
-
-			
-
-
-
-
-
 			validateForm('form01');
 			validateForm('form02');
 
