@@ -1734,6 +1734,53 @@ h1{
             }
         }
     }
+    &.modal-video{
+        padding-left: 0 !important;
+        .modal-dialog{
+            max-width: 66.66%;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @media(max-width: 767px){
+                max-width: 87vw;
+            }
+        }
+        .yt-player{  
+            height: 78.26vh;
+            @media(max-width: 767px){
+                height: 50vh;
+            }
+            @media(max-width: 480px){
+                height: 30vh;
+            }
+            
+        }
+        .close_video{
+            position: absolute;
+            right: -25px;
+            top: -20px;
+            max-width: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            img{
+                width: 100%;
+            }
+            @media(max-width: 767px){
+                max-width: 35px;
+                right: -14px;
+                top: -15px
+            }
+            &:hover{
+                transform: rotate(360deg);
+                @media(max-width: 767px){
+                    transform: none;
+                }
+            }
+        }
+       
+
+    }
     .close{
         // top: -17px;
         // right: -16px;
@@ -1838,9 +1885,56 @@ h1{
     .item{
         position: relative;
         @media(max-width: 767px){
-            height: 300px;
+            // height: 300px;
         }
     }
+
+    .thumb{
+        background-size: cover;
+        background-position: center center;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @media(max-width:767px){
+           height: auto;
+        }
+    }
+    .mobile{
+        display: none;
+        @media(max-width: 767px){
+           display: block;
+        }
+    }
+    .pc{
+        @media(max-width: 767px){
+           display: none;
+        }
+    }
+    .btn_play{
+        cursor: pointer;
+        max-width: 100px;
+        transition: all 0.2s ease;
+
+        @media(max-width:767px){
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            max-width: 60px;
+        }
+
+        &:hover{
+            transform:scale(1.1);
+            -moz-transform:scale(1.1);
+            -o-transform:scale(1.1);
+            -webkit-transform:scale(1.1);
+            @media(max-width: 767px){
+                transform: translate(-50%,-50%);
+            }
+        }
+    }
+
     .yt-player{
         position: absolute;
         top: 0;

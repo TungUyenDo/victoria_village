@@ -145,12 +145,24 @@
 				
 				<div class="videoSlider">
 					<div class="item">
-						<div class="mark"></div>
-						<iframe data-autoplay class="yt-player" src="https://www.youtube.com/embed/AFUgibZVTRg?autoplay=1&controls=0&showinfo=0&loop=1&rel=0&playlist=bxq8aRiLJtA&mute=1&enablejsapi=1&origin=https%3A%2F%2Falphastarclub.com&widgetid=1" frameborder="0" allowfullscreen></iframe>
+						
+						<figure class="thumb mobile">
+							<img class="img" src="https://img.youtube.com/vi/kVQLgvFCzvA/maxresdefault.jpg" alt="">
+							<img src="./assets/images/btn_play.png" data-id="kVQLgvFCzvA" class="btn_play" alt="">
+						</figure>
+						<figure class="thumb pc" style="background-image: url(https://img.youtube.com/vi/kVQLgvFCzvA/maxresdefault.jpg);">
+							<img src="./assets/images/btn_play.png" data-id="kVQLgvFCzvA" class="btn_play" alt="">
+						</figure>
 					</div>
 					<div class="item">
-						<div class="mark"></div>
-						<iframe data-autoplay class="yt-player" src="https://www.youtube.com/embed/AFUgibZVTRg?autoplay=1&amp;enablejsapi=1&amp;controls=0&amp;mute=1&amp;loop=1&amp;playsinline=1&amp;color=white&amp;rel=0&amp;cc_load_policy=1&amp;playlist=fEvm1guHlU8" frameborder="0" allowfullscreen></iframe>
+						<figure class="thumb mobile">
+							<img src="https://img.youtube.com/vi/AFUgibZVTRg/maxresdefault.jpg" alt="">
+							<img src="./assets/images/btn_play.png" data-id="AFUgibZVTRg" class="btn_play" alt="">
+						</figure>
+						
+						<figure class="thumb pc" style="background-image:url(https://img.youtube.com/vi/AFUgibZVTRg/maxresdefault.jpg)">
+							<img src="./assets/images/btn_play.png" data-id="AFUgibZVTRg" class="btn_play" alt="">
+						</figure>
 					
 					</div>
 				</div>
@@ -388,6 +400,17 @@
 			</div>
 		</div>
 
+		<div class="modal fade modal-video"  id="modalVideo" tabindex="-1" role="dialog">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<iframe data-autoplay class="yt-player" src="" frameborder="0" allowfullscreen></iframe>
+					<figure class="close_video" data-dismiss="modal">
+						<img src="./assets/images/modal_close.png" alt="">
+					</figure>
+				</div>
+			</div>
+		  </div>
+
 
 		<!-- Site footer -->
 		<footer class="site-footer footer-content-light footer-mobile-content-light">
@@ -430,27 +453,6 @@
 	</script>
 
 
-	<!-- <script>
-		var zoomCount = 0;
-		var zoomMax = 3;
-		var eleMap = document.querySelector('#section03__map');
-		var eleZoomIn = document.querySelector('.plus');
-		var eleZoomOut = document.querySelector('.minus');
-		const panzoom = Panzoom( eleMap , { contain: 'outside' } );
-		eleZoomIn.addEventListener('click', function(){
-			if(zoomCount >= 3){ return false }
-			zoomCount += 1;
-			panzoom.zoomIn();
-		});
-		eleZoomOut.addEventListener('click', function(){
-			if(zoomCount <= 0){
-				panzoom.reset(e);
-				return false;
-			}
-			zoomCount -= 1;
-			panzoom.zoomOut();
-		});
-	</script> -->
 
 
 	<script src="./assets/libs/jquery/jquery.min.js"></script>
@@ -466,34 +468,34 @@
 
 	<script>
 		
-		var tag = document.createElement('script');
-        tag.id = 'iframe-demo';
-        tag.src = 'https://www.youtube.com/iframe_api';
-        var firstScriptTag = document.getElementsByTagName('script')[0];
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+		// var tag = document.createElement('script');
+        // tag.id = 'iframe-demo';
+        // tag.src = 'https://www.youtube.com/iframe_api';
+        // var firstScriptTag = document.getElementsByTagName('script')[0];
+        // firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-        var player;
-        function onYouTubeIframeAPIReady() {
-            var elems1 = document.getElementsByClassName('yt-player');
-            for(var i = 0; i < elems1.length; i++) {
+        // var player;
+        // function onYouTubeIframeAPIReady() {
+        //     var elems1 = document.getElementsByClassName('yt-player');
+        //     for(var i = 0; i < elems1.length; i++) {
                 
-                player = new YT.Player(elems1[i], {
-                    events: {
-                        // 'onReady': onPlayerReady,
-                        // 'onStateChange': onPlayerStateChange
-                    }
-                });
-            }
-        }
+        //         player = new YT.Player(elems1[i], {
+        //             events: {
+        //                 // 'onReady': onPlayerReady,
+        //                 // 'onStateChange': onPlayerStateChange
+        //             }
+        //         });
+        //     }
+        // }
         // function onPlayerReady(event) {
         //     player.playVideo();
         // }
 		
-		$('.videoSlider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
-            $('.yt-player').each(function(){
-				player.stopVideo();
-            });
-		});
+		// $('.videoSlider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+        //     $('.yt-player').each(function(){
+		// 		player.stopVideo();
+        //     });
+		// });
 
 		$('.videoSlider').slick({
 			slidesToShow: 1,
@@ -505,7 +507,20 @@
 			nextArrow: '<span class="slick-next slick-arrow"><img src="./assets/images/arrow-right.png"></i></span>',
 		});
 
-        
+		
+		$('.videoSlider .btn_play').click(function(){
+			var id = $(this).data('id');
+			var src = 'https://www.youtube.com/embed/'+ id +'?autoplay=1&enablejsapi=1&controls=1&mute=1&loop=1&playsinline=1&color=white&rel=0&cc_load_policy=1&enablejsapi=1'
+				
+			$('#modalVideo').modal('show');
+			$('#modalVideo .yt-player').attr('src',src)
+
+		})
+
+		$('.modal').on('hidden.bs.modal', function(e) { 
+			$("#modalVideo").modal("hide");
+			$('#modalVideo .yt-player').attr('src','')
+		});
        
 		
 
